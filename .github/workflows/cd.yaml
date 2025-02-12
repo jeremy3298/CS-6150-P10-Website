@@ -1,0 +1,94 @@
+name: Deploy Template Application
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Nextjs Cache
+        uses: actions/cache@v4
+        with:
+          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+                
+
+      - name: Deploy to c4g.dev server
+        env:
+          TARGET_DIR: /var/www/template
+          APP_NAME: template
+          PORT: 3001
+        run: |
+          touch .env
+          echo 'DATABASE_PW=${{ secrets.DATABASE_PW }}' >> .env
+          echo 'DATABASE_USER=${{ secrets.DATABASE_USER }}' >> .env
+          echo 'DATABASE_NAME=${{ secrets.DATABASE_NAME }}' >> .env
+          echo 'DATABASE_HOST=${{ secrets.DATABASE_HOST }}' >> .env
+          echo 'DATABASE_PORT=${{ secrets.DATABASE_PROD_PORT }}' >> .env
+          echo 'DATABASE_URL=${{ secrets.DATABASE_PROD_URL }}' >> .env
+          echo 'AUTH_SECRET=${{ secrets.AUTH_SECRET }}' >> .env
+          echo 'AUTH_GOOGLE_ID=${{ secrets.AUTH_GOOGLE_ID }}' >> .env
+          echo 'AUTH_GOOGLE_SECRET=${{ secrets.AUTH_GOOGLE_SECRET }}' >> .env
+          echo 'NEXTAUTH_URL=https://$APP_NAME.c4g.dev' >> .env
+          echo 'AUTH_TRUST_HOST=true' >> .env
+          npm ci
+          npx prisma migrate deploy
+          npm run build
+          cp .env .next/standalone/
+          cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/
+          rm -rf $TARGET_DIR
+          mkdir $TARGET_DIR
+          cp -r .next/standalone/. $TARGET_DIR
+          cd $TARGET_DIR
+          echo 'module.exports = {
+            apps: [{
+              name: "'$APP_NAME'",
+              script: "npm",
+              args: "start -- --port='$PORT'",
+              env: {
+                DATABASE_PW: "'${{ secrets.DATABASE_PW }}'",
+                DATABASE_USER: "'${{ secrets.DATABASE_USER }}'",
+                DATABASE_NAME: "'${{ secrets.DATABASE_NAME }}'",
+                DATABASE_HOST: "'${{ secrets.DATABASE_HOST }}'",
+                DATABASE_PORT: "'${{ secrets.DATABASE_PROD_PORT }}'",
+                DATABASE_URL: "'${{ secrets.DATABASE_PROD_URL }}'",
+                AUTH_SECRET: "'${{ secrets.AUTH_SECRET }}'",
+                AUTH_GOOGLE_ID: "'${{ secrets.AUTH_GOOGLE_ID }}'",
+                AUTH_GOOGLE_SECRET: "'${{ secrets.AUTH_GOOGLE_SECRET }}'",
+                NEXTAUTH_URL: "https://'$APP_NAME'.c4g.dev",
+                AUTH_TRUST_HOST: "true"
+              }
+            }]
+          }' > ecosystem.config.js
+          if pm2 list | grep -q $APP_NAME; then
+            echo 'Restarting application: $APP_NAME'
+            pm2 restart ecosystem.config.js --env production
+          else
+            echo 'Starting application: $APP_NAME'
+            pm2 start ecosystem.config.js --env production
+          fi
+          pm2 save

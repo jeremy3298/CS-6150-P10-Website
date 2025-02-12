@@ -1,0 +1,64 @@
+name: Build and Lint Template Application
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  main:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Nextjs Cache
+        uses: actions/cache@v4
+        with:
+          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+              
+      - name: Build
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          DATABASE_PW: ${{ secrets.DATABASE_PW }}
+          DATABASE_USER: ${{ secrets.DATABASE_USER }}
+          DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+          DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+          DATABASE_PORT: ''
+          AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+          AUTH_GOOGLE_ID: ${{ secrets.AUTH_GOOGLE_ID }}
+          AUTH_GOOGLE_SECRET: ${{ secrets.AUTH_GOOGLE_SECRET }}
+        run: |
+          npm ci
+          docker compose -f ./docker-compose.yml -p "pr-${PR_NUMBER}" up -d
+          sleep 4
+          export DB_PORT=$(docker compose -p "pr-${PR_NUMBER}" port template-db 5432 | cut -d: -f2)
+          export DATABASE_URL="postgresql://${DATABASE_USER}:${DATABASE_PW}@${DATABASE_HOST}:${DB_PORT}/${DATABASE_NAME}"
+          npx prisma migrate deploy
+          npx prisma db seed
+          npm run build
+      - name: Clean up
+        if: always()
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          docker compose -p "pr-${PR_NUMBER}" -f ./docker-compose.yml down --volumes --remove-orphans
+          rm -rf ${{ github.workspace }}/*
