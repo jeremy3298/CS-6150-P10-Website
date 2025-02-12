@@ -2,6 +2,19 @@
   "name": "template",
   "version": "0.1.0",
   "private": true,
+  "description": "The purpose of this repository is to proved a template for a base starting point for C4G course projects. This template is not mandatory, but it captures the needs of a typical C4G project that uses a website and a database. A team that uses the template for building their project can also use it to meet course reporting requirements. Features include:",
+  "homepage": "https://github.com/jeremy3298/CS-6150-P10-Website#readme",
+  "bugs": {
+    "url": "https://github.com/jeremy3298/CS-6150-P10-Website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremy3298/CS-6150-P10-Website.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

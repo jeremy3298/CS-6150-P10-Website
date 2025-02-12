@@ -1,16 +1,23 @@
 export default function Home() {
   return (
-    <div className='flex items-center justify-center p-4'>
+    <div className="flex items-center justify-center p-4">
       <p>
-        This is the template site! Take a look at the&nbsp;
+        This is the site for the P10 Renewvia Analysis Team! Take a look at the previous team"s work&nbsp;
         <a
-          className='text-link'
-          href='https://github.gatech.edu/cs-6150-computing-for-good/template?tab=readme-ov-file#getting-started'
-          target='_blank'
+          className="text-link"
+                  href="https://github.com/Renewvia-Energy/impact-analysis/tree/achemso-letter"
+          target="_blank"
         >
-          readme
+          Impact Analysis Letter
         </a>
-        &nbsp;to get started.
+        &nbsp;to get started.<br />Here is where our work will be when it is done!&nbsp;
+        <a
+           className="text-link"
+           href="https://github.com/Renewvia-Energy/Renewvia-REC"
+           target="_blank"
+           >
+           Renewvia-REC
+         </a>
       </p>
     </div>
   );
