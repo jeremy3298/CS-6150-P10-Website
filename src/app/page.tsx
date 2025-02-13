@@ -16,7 +16,7 @@ export default function Home() {
            href="https://github.com/Renewvia-Energy/Renewvia-REC"
            target="_blank"
            >
-           Renewvia-REC
+           Renewvia REC
          </a>
       </p>
     </div>
