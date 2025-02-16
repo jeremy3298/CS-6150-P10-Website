@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <div className="flex items-center justify-center p-4">
       <p>
-        This is the site for the P10 Renewvia Analysis Team! Take a look at the previous team"s work&nbsp;
+        This is the site for the P10 Renewvia Analysis Team (test)! Take a look at the previous team"s work&nbsp;
         <a
           className="text-link"
                   href="https://github.com/Renewvia-Energy/impact-analysis/tree/achemso-letter"
