@@ -7,17 +7,31 @@ export default function Home() {
           className="text-link"
           href="https://github.com/Renewvia-Energy/impact-analysis/tree/achemso-letter"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Impact Analysis Letter
         </a>
-        &nbsp;to get started.<br />Here is where our work will be when it is done!&nbsp;
+        &nbsp;to get started.<br />
+        Here is where our work will be when it is done!&nbsp;
         <a
           className="text-link"
           href="https://github.com/Renewvia-Energy/Renewvia-REC"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Renewvia REC
         </a>
+        .<br />
+        You can also watch our mini-presentation to get a brief overview of the project&nbsp;
+        <a
+          className="text-link"
+          href="https://gtvault.sharepoint.com/:v:/s/2025-p10/EbyWNCUpijpFqdgwGD-I1kIBpzNE1YS4_jGZ8anXkUj9CQ?e=rCCSCN"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          (mini-presentation)
+        </a>
+        .
       </p>
 
       <div className="mt-4 text-left">
