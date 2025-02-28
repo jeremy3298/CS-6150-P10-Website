@@ -1,6 +1,8 @@
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center p-4">
+      <h1 className="text-2xl font-bold mb-4">Renewvia Solar Impact: Socio-Economic Insights</h1>
+
       <p>
         This is the site for the P10 Renewvia Analysis Team! Take a look at the previous team's work&nbsp;
         <a
