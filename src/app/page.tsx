@@ -33,22 +33,20 @@ export default function Home() {
         >
           (mini-presentation)
         </a>
-        .
-      </p>
-
-      <p>
+        .<br />
+        Here is a literature survey we wrote. We went over surveys done in similar industries to our partner organization
+        and analyzed them in an effort to make sure the survey we create for Renewvia is as good as possible&nbsp;
         <a
           className="text-link"
           href="https://gtvault.sharepoint.com/:w:/s/2025-p10/Eehs_QsnFpBJv1TMXQcYGh0BSLkdpoOaQGQ21-2TuWISsg?e=F4m6Ix"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Here
+          (Literature Survey)
         </a>
-        is a literature survey we wrote. We went over surveys done in similar industries to our partner organization
-        and analyzed them in an effort to make sure the survey we create for Renewvia is as good as possible.
-      </p>
 
+        .
+      </p>
       <div className="mt-4 text-left">
         <h2 className="text-xl font-bold">Project Description</h2>
         <p>
