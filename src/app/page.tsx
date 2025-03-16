@@ -44,9 +44,9 @@ export default function Home() {
         >
           (Literature Survey)
         </a>
-
         .
       </p>
+
       <div className="mt-4 text-left">
         <h2 className="text-xl font-bold">Project Description</h2>
         <p>
@@ -72,6 +72,20 @@ export default function Home() {
           <li>Desktop: Performance 100 | Accessibility 100 | Best Practices 100 | SEO 100</li>
           <li>Mobile: Performance 97 | Accessibility 100 | Best Practices 100 | SEO 100</li>
         </ul>
+
+        <h2 className="text-xl font-bold mt-4">Updated Renewvia Survey</h2>
+        <p>
+          This is the current updated Renewvia Survey. You can access it here:&nbsp;
+          <a
+            className="text-link"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd-jcLO2TX3HPgicfchgYSUvAcr0wvpqqdvbFGud-nAXls_qA/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Renewvia Survey
+          </a>
+          .
+        </p>
       </div>
     </div>
   );
