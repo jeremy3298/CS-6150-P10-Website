@@ -1,7 +1,7 @@
 export default function Home() {
   const handlePeerEvalClick = (event) => {
     event.preventDefault();
-    alert("Peer Evaluation survey not yet available. Please check back in 12 hours.");
+    alert("Peer Evaluation survey is not yet available. Please check back in 12 hours.");
   };
 
   return (
