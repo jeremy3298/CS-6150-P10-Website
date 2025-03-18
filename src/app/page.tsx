@@ -1,21 +1,7 @@
 export default function Home() {
-  const handlePeerEvalClick = () => {
-    alert("Peer Evaluation survey not yet available. Please check back in 12 hours.");
-  };
-
   return (
     <div className="flex flex-col items-center justify-center p-4">
       <h1 className="text-2xl font-bold mb-4">Renewvia Solar Impact: Socio-Economic Insights</h1>
-
-      <h2 className="text-xl font-bold mt-2">Peer Evaluation Survey</h2>
-      <p>
-        <a
-          className="text-link cursor-pointer"
-          onClick={handlePeerEvalClick}
-        >
-          Peer Evaluation Survey
-        </a>
-      </p>
 
       <p>
         This is the site for the P10 Renewvia Analysis Team! Take a look at the previous team's work&nbsp;
