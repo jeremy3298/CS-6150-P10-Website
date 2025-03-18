@@ -1,8 +1,18 @@
 export default function Home() {
+   const handlePeerEvalClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+     event.preventDefault();
+     alert("Peer Evaluation survey is not yet available. Please check back in 12 hours.");
+   };
+
   return (
     <div className="flex flex-col items-center justify-center p-4">
       <h1 className="text-2xl font-bold mb-4">Renewvia Solar Impact: Socio-Economic Insights</h1>
-
+        {/* Peer Evaluation Survey placed right under the title */}
+        <p>
+         <a className="text-link cursor-pointer" href="#" onClick={handlePeerEvalClick}>
+           Peer Evaluation Survey
+         </a>
+        </p>
       <p>
         This is the site for the P10 Renewvia Analysis Team! Take a look at the previous team's work&nbsp;
         <a
