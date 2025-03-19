@@ -16,6 +16,7 @@ export default function Home() {
           Peer Evaluation Survey
         </a>
       </p>
+      <br />
       <div className="w-full max-w-3xl text-left">
         <p className="font-bold mb-4">Our changes to the Renewvia survey can be contextualized to a few main points:</p>
         <ul className="list-disc ml-6">
