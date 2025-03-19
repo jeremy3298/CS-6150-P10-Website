@@ -18,7 +18,7 @@ export default function Home() {
       </p>
       <br />
       <div className="w-full max-w-3xl text-left">
-        <p className="text-lg mt-4">Our changes to the Renewvia survey can be contextualized to a few main points:</p>
+        <p className="text-lg mt-4 text-left">Our changes to the Renewvia survey can be contextualized to a few main points:</p>
         <ul className="list-disc ml-6">
           <li>Strengthen the baseline data to better track pre-electrification income, energy, and socio-economic levels. </li>
           <li>Isolate Impact by collecting data from a control group in neighborhoods with a similar demographic. </li>
@@ -27,7 +27,7 @@ export default function Home() {
           <li>Changing the structure of the survey so it can be given out at certain intervals (6, 9, 12 months post-electrification) to track changes in metrics over time rather than a one-time impact.</li>
           <li>Receive household feedback on mini-grid connection</li>
         </ul>
-        <p className="text-lg mt-4">New Quantitative Measures for Socio-Economic Impact</p>
+        <p className="text-lg mt-4 text-left">New Quantitative Measures for Socio-Economic Impact:</p>
         <ul className="list-disc ml-6">
           <li>Increase in Female Business Ownership</li>
           <li>Growth in Internet-Connected Devices Per Household</li>
