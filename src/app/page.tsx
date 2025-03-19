@@ -9,7 +9,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-4">
+    <div className="flex flex-col p-4">
       <h1 className="text-lg mb-4">Renewvia Solar Impact: Socio-Economic Insights</h1>
       <p>
         <a className="text-link cursor-pointer" href="#" onClick={handlePeerEvalClick}>
