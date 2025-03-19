@@ -16,6 +16,13 @@ export default function Home() {
           Peer Evaluation Survey
         </a>
       </p>
+      <p>Our changes to the Renewvia survey can be contextualized to a few main points:</p>
+        <ul className="list-disc ml-6">
+          <li>Strengthen the baseline data to better track pre-electrification income, energy, and socio-economic levels. One further addition to this is to also collect data from a control group in similar neighborhoods that haven’t been electrified yet so we can remove noise from the data.</li>
+          <li>Adding new metrics from additional questions related to network connection, gender roles, education, and income in order to align further with Sustainable Development Goals (SDGs) set by the UN.</li>
+          <li>Altering existing questions to align with the SDGs and frameworks like the Multidimensional Energy Poverty Index. Furthermore, existing gaps in the survey have been fixed by removing biases in certain questions and altering them to gather more data (asking questions in a scaled or qualitative way rather than a binary way).</li>
+          <li>Changing the structure of the survey so it can be given out at certain intervals (6, 9, 12 months post-electrification) to track changes in metrics over time rather than a one-time impact.</li>
+      </ul>
       <p>
         This is the site for the P10 Renewvia Analysis Team! Take a look at the previous team's work&nbsp;
         <a
