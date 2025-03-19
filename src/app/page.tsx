@@ -24,6 +24,7 @@ export default function Home() {
           <li>Changing the structure of the survey so it can be given out at certain intervals (6, 9, 12 months post-electrification) to track changes in metrics over time rather than a one-time impact.</li>
         </ul>
       <br />
+      <p>
         This is the site for the P10 Renewvia Analysis Team! Take a look at the previous team's work&nbsp;
         <a
           className="text-link"
