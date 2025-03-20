@@ -3,20 +3,23 @@
 import React from 'react';
 
 export default function Home() {
-  const handlePeerEvalClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-    alert("Peer Evaluation survey is not yet available. Please check back in 12 hours.");
-  };
-
   return (
     <div className="flex flex-col p-4">
       <h1 className="text-xl font-bold mb-4">Renewvia Solar Impact: Socio-Economic Insights</h1>
+      
       <p>
-        <a className="text-link cursor-pointer" href="#" onClick={handlePeerEvalClick}>
-          Peer Evaluation Survey
+        Here is the peer evaluation survey, thank you for taking it!&nbsp;
+        <a
+          className="text-link"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdzsbuwKpSjWFGYqgU6leUuKhXSvadrxOiTpoqix1ft-R4nqA/viewform?usp=dialog"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          survey
         </a>
       </p>
-        <p>
+      
+      <p>
         This is the site for the P10 Renewvia Analysis Team! Take a look at the previous team's work&nbsp;
         <a
           className="text-link"
@@ -59,6 +62,19 @@ export default function Home() {
         </a>
         .
       </p>
+      
+      <p>
+        Here is our current editable survey:&nbsp;
+        <a
+          className="text-link"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSd-jcLO2TX3HPgicfchgYSUvAcr0wvpqqdvbFGud-nAXls_qA/viewform?usp=dialog"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          survey
+        </a>
+      </p>
+      
       <br />
       <hr className="w-full border-t border-gray-300 my-6" />
       <div className="w-full max-w-3xl text-left">
@@ -102,7 +118,6 @@ export default function Home() {
         </p>
       </div>
       <br />
-    
     </div>
   );
 }
