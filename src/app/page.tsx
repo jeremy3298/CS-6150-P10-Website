@@ -3,18 +3,19 @@
 import React from 'react';
 
 export default function Home() {
-  const handlePeerEvalClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-    alert("Peer Evaluation survey is not yet available. Please check back in 12 hours.");
-  };
-
   return (
     <div className="flex flex-col p-4">
       <h1 className="text-xl font-bold mb-4">Renewvia Solar Impact: Socio-Economic Insights</h1>
       
       <p>
-        <a className="text-link cursor-pointer" href="#" onClick={handlePeerEvalClick}>
-          Peer Evaluation Survey
+        Here is the peer evaluation survey, thank you for taking it!&nbsp;
+        <a
+          className="text-link"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdzsbuwKpSjWFGYqgU6leUuKhXSvadrxOiTpoqix1ft-R4nqA/viewform?usp=dialog"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          survey
         </a>
       </p>
       
@@ -79,8 +80,8 @@ export default function Home() {
       <div className="w-full max-w-3xl text-left">
         <p className="text-lg mt-4 text-left">Our changes to the Renewvia survey can be contextualized to a few main points:</p>
         <ul className="list-disc ml-6">
-          <li>Strengthen the baseline data to better track pre-electrification income, energy, and socio-economic levels.</li>
-          <li>Isolate Impact by collecting data from a control group in neighborhoods with a similar demographic.</li>
+          <li>Strengthen the baseline data to better track pre-electrification income, energy, and socio-economic levels. </li>
+          <li>Isolate Impact by collecting data from a control group in neighborhoods with a similar demographic. </li>
           <li>Adding new metrics from additional questions related to network connection, gender roles, education, and income in order to align further with Sustainable Development Goals (SDGs) set by the UN.</li>
           <li>Altering existing questions to align with the SDGs and frameworks like the Multidimensional Energy Poverty Index. Furthermore, existing gaps in the survey have been fixed by removing biases in certain questions and altering them to gather more data (asking questions in a scaled or qualitative way rather than a binary way).</li>
           <li>Changing the structure of the survey so it can be given out at certain intervals (6, 9, 12 months post-electrification) to track changes in metrics over time rather than a one-time impact.</li>
