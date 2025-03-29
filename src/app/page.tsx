@@ -74,7 +74,17 @@ export default function Home() {
           survey
         </a>
       </p>
-      
+      <p>
+        <a
+          className="text-link"
+          href="https://docs.google.com/document/d/1O3C4FcqYGdXzUCSSr5iRuelIvdMKXwQ57BE3Vnq_JMA/edit?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Documentation to changes made to original survey including new quantitative metrics and questions
+        </a>
+      </p>
+
       <br />
       <hr className="w-full border-t border-gray-300 my-6" />
       <div className="w-full max-w-3xl text-left">
@@ -87,24 +97,7 @@ export default function Home() {
           <li>Changing the structure of the survey so it can be given out at certain intervals (6, 9, 12 months post-electrification) to track changes in metrics over time rather than a one-time impact.</li>
           <li>Receive household feedback on mini-grid connection</li>
         </ul>
-        <p className="text-lg mt-4 text-left">New Quantitative Measures for Socio-Economic Impact:</p>
-        <ul className="list-disc ml-6">
-          <li>Increase in Female Business Ownership</li>
-          <li>Growth in Internet-Connected Devices Per Household</li>
-          <li>Rise in Digital Banking Adoption</li>
-          <li>Increase in Remote Online Workers</li>
-          <li>Improvement in Female School Attendance</li>
-          <li>Growth in Total Business Ownership</li>
-          <li>Shift from Farming/Fishing/Home-Making to Other Occupations</li>
-          <li>Reduction in Number of Individuals Without Income</li>
-          <li>Change in Monthly Household Utility Costs</li>
-          <li>Improvement in Business Productivity</li>
-          <li>Increase in Electricity Satisfaction Levels</li>
-          <li>Reduction in Population Below the International Poverty Line</li>
-        </ul>
-        <p className="mt-4">
-          These new measurements are calculated from binary variables, linear scales, and other quantitative responses received from newly added questions.
-        </p>
+
         <p className="mt-4">
           View the current metrics here:&nbsp;
           <a
