@@ -6,7 +6,17 @@ export default function Home() {
   return (
     <div className="flex flex-col p-4">
       <h1 className="text-xl font-bold mb-4">Renewvia Solar Impact: Socio-Economic Insights</h1>
-      
+      <p>
+        Here is the demo, thank you for watching it!&nbsp;
+        <a
+          className="text-link"
+          href="https://gtvault.sharepoint.com/:v:/s/2025-p10/EVkpgUbaVWlEiMsiAIpdoPcBz3U9gR66dOgx3o_jHEBOvw?e=NnCrYr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          survey
+        </a>
+      </p>
       <p>
         Here is the peer evaluation survey, thank you for taking it!&nbsp;
         <a
