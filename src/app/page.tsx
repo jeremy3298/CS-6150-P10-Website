@@ -14,7 +14,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          survey
+          Demo
         </a>
       </p>
       <p>
