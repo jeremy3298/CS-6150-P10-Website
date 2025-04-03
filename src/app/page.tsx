@@ -74,7 +74,7 @@ export default function Home() {
       </p>
       
       <p>
-        Here is our current revised survey which will be sent out at intervals (3,6,9,12 Months):&nbsp;
+        Here is our current revised survey which will be given to the post-electrification population out at intervals (3,6,9,12 Months):&nbsp;
         <a
           className="text-link"
           href="https://docs.google.com/forms/d/e/1FAIpQLSd-jcLO2TX3HPgicfchgYSUvAcr0wvpqqdvbFGud-nAXls_qA/viewform?usp=dialog"
