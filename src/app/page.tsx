@@ -74,14 +74,25 @@ export default function Home() {
       </p>
       
       <p>
-        Here is our current editable survey:&nbsp;
+        Here is our current revised survey which will be sent out at intervals (3,6,9,12 Months):&nbsp;
         <a
           className="text-link"
           href="https://docs.google.com/forms/d/e/1FAIpQLSd-jcLO2TX3HPgicfchgYSUvAcr0wvpqqdvbFGud-nAXls_qA/viewform?usp=dialog"
           target="_blank"
           rel="noopener noreferrer"
         >
-          survey
+          Revised Interval Survey
+        </a>
+      </p>
+      <p>
+        Here is our Baseline survey which will be given to the pre-electrification population as well as a control group:&nbsp;
+        <a
+          className="text-link"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSebKY0sXSCTwEL79Pf9LynxNHHb5g4CdaJh5ZsJFLxr1Q4wIw/viewform?usp=header"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Baseline + Control Survey
         </a>
       </p>
       <p>
