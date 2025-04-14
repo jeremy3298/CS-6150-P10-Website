@@ -7,6 +7,17 @@ export default function Home() {
     <div className="flex flex-col p-4">
       <h1 className="text-xl font-bold mb-4">Renewvia Solar Impact: Socio-Economic Insights</h1>
       <p>
+        Here is the Developer Guide (no user guide as it's just taking surveys)!&nbsp;
+        <a
+          className="text-link"
+          href="https://docs.google.com/document/d/1clke_nuG0JC7JYRjAmt1tz2q41a_XkJ4gJy_XX6KHf0/edit?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Dev Guide
+        </a>
+      </p>
+      <p>
         Here is the demo, thank you for watching it!&nbsp;
         <a
           className="text-link"
